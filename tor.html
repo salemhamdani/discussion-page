@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Veilcomm</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f2f5;
+        color: #000;
+        margin: 0;
+      }
+
+      .header {
+        background-color: #fff;
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .header h1 {
+        color: #333;
+        margin: 0;
+        color: #4b0e69;
+      }
+
+      .menu {
+        display: flex;
+      }
+
+      .menu a {
+        margin-left: 10px;
+        color: #333;
+        text-decoration: none;
+      }
+
+      .container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+      .discussion-container {
+        max-height: 400px;
+        overflow-y: auto;
+        padding: 10px;
+      }
+      .discussion-card {
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        margin-top: 20px;
+        width: 650px;
+      }
+      .card-group {
+        display: flex;
+        align-items: center;
+      }
+      .search-card {
+        max-width: 350px;
+        margin-right: 20px;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      }
+      .message {
+        border-radius: 10px;
+        margin-bottom: 10px;
+        clear: both;
+        position: relative;
+        padding: 10px;
+      }
+
+      .sender {
+        float: right;
+        background-color: #dbb6ff;
+        color: #000;
+      }
+
+      .receiver {
+        float: left;
+        background-color: #f5f6f8;
+        color: #000;
+      }
+
+      .message .author {
+        font-weight: bold;
+        color: #000;
+      }
+
+      .message .timestamp {
+        font-size: 12px;
+        color: #777;
+      }
+
+      .message .content {
+        margin-top: 5px;
+      }
+
+      .message:before {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-style: solid;
+      }
+
+      .sender:before {
+        border-color: transparent transparent #dbb6ff transparent;
+        border-width: 0 10px 10px 10px;
+        right: -10px;
+        bottom: 0;
+      }
+
+      .receiver:before {
+        border-color: transparent #f5f6f8 transparent transparent;
+        border-width: 0 10px 10px 0;
+        left: -10px;
+        bottom: 0;
+      }
+
+      .form-container {
+        margin-top: 20px;
+        display: flex;
+      }
+
+      .form-container input[type="text"] {
+        flex-grow: 1;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+
+      .form-container input[type="submit"] {
+        padding: 8px 12px;
+        margin-left: 5px;
+        background-color: #4b0e69;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      .clear {
+        clear: both;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h1>Veilcomm App</h1>
+      <div class="menu">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="card-group">
+        <div class="search-card">
+          <p>Search contact by address</p>
+          <div class="form-container">
+            <input
+              type="text"
+              id="message-input"
+              placeholder="Type the address..."
+            />
+            <input type="submit" value="Join" />
+          </div>
+        </div>
+        <div class="discussion-card">
+          <div class="discussion-container">
+            <div class="message sender">
+              <div class="author">John</div>
+              <div class="timestamp">May 25, 2023 10:30 AM</div>
+              <div class="content">Hello, how are you?</div>
+            </div>
+
+            <div class="message receiver">
+              <div class="author">Jane</div>
+              <div class="timestamp">May 25, 2023 10:35 AM</div>
+              <div class="content">I'm good, thanks! How about you?</div>
+            </div>
+            <div class="message sender">
+              <div class="author">Salem</div>
+              <div class="timestamp">May 25, 2023 10:30 AM</div>
+              <div class="content">Hello, how are you?</div>
+            </div>
+            <div class="message receiver">
+              <div class="author">Jane</div>
+              <div class="timestamp">May 25, 2023 10:35 AM</div>
+              <div class="content">I'm good, thanks! How about you?</div>
+            </div>
+            <div class="message receiver">
+              <div class="author">Jane</div>
+              <div class="timestamp">May 25, 2023 10:35 AM</div>
+              <div class="content">I'm good, thanks! How about you?</div>
+            </div>
+            <!-- Add more messages here -->
+          </div>
+          <div class="clear"></div>
+
+          <div class="form-container">
+            <input
+              type="text"
+              id="message-input"
+              placeholder="Type your message..."
+            />
+            <input type="submit" value="Send" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
